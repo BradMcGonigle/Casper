@@ -21,7 +21,7 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}} nav-closed">
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T6KTKL"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -30,13 +30,19 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T6KTKL');</script>
 
-    {{! Everything else gets inserted here }}
-    {{{body}}}
+    {{navigation}}
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-    </footer>
+    <div class="site-wrapper">
+
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
